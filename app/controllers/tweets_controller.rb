@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
 
+<<<<<<< HEAD
   get '/tweets' do
     "hello world"
     erb :'tweets/tweets'
@@ -17,3 +18,10 @@ class TweetsController < ApplicationController
     end
   end
 end
+=======
+  get '/tweets/new' do
+    erb :'tweets/create_tweet'
+  end
+
+end
+>>>>>>> 98492d5eccd0078cc4f3572fe93844596fd67123
