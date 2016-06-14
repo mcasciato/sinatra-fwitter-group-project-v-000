@@ -13,7 +13,15 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-  get '/signup' do
-    erb :'users/create_user'
+  helpers do
+  def logged_in?
+    !!session[:user_id]
   end
+
+  def current_user
+    User.find(session[:user_id])
+  end
+
+end
+
 end
