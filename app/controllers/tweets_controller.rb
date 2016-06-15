@@ -29,14 +29,13 @@ class TweetsController < ApplicationController
     end
   end
 
-  # get '/tweets/create_tweet' do
-  #   if logged_in?.empty?
-  #     redirect "/users/login"
-  #   else
-  #     erb :'tweets/create_tweet'
-  #   end
-  # end
-
-
+  get '/tweets/:id' do
+    if session[:user_id]
+      @tweet = Tweet.find_by_id(params[:id])
+      erb :'/tweets/show_tweet'
+    else
+      redirect to '/login'
+    end
+  end
 
 end
