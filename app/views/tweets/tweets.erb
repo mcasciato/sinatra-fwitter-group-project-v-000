@@ -1,8 +1,8 @@
-<h1>Welcome, <%= @user.username %></h1>
+<h1>Welcome, <%= current_user.username %></h1>
 
 <% @tweets.each do |tweet| %>
-  <p><%= tweet.content %></p>
-<% end %>
+<a href="tweets/<%=tweet.id%>/edit"> <%=tweet.content %></a><br>
+<%end%>
 
 <br>
 
